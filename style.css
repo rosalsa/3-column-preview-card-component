@@ -1,0 +1,96 @@
+/* --- Variables & Reset --- */
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --very-light-gray: hsl(0, 0%, 95%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 15px;
+  background-color: var(--very-light-gray);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 24px;
+}
+
+/* --- Layout Container --- */
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 920px;
+  border-radius: 8px;
+  overflow: hidden; /* Memastikan sudut kartu tetap melengkung */
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+}
+
+/* --- Card Styles --- */
+.card {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sedan { background-color: var(--bright-orange); }
+.suv { background-color: var(--dark-cyan); }
+.luxury { background-color: var(--very-dark-cyan); }
+
+.heading {
+  font-family: 'Big Shoulders Display', cursive;
+  text-transform: uppercase;
+  color: var(--very-light-gray);
+  font-size: 2.5rem;
+  margin: 35px 0;
+}
+
+.description {
+  color: var(--transparent-white);
+  line-height: 1.6;
+  margin-bottom: 80px;
+  flex-grow: 1; /* Menjaga tombol tetap sejajar di bawah jika teks berbeda panjangnya */
+}
+
+/* --- Interactive Elements --- */
+.btn {
+  background-color: var(--very-light-gray);
+  border: 2px solid var(--very-light-gray);
+  padding: 12px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Dynamic button text colors based on card */
+.sedan .btn { color: var(--bright-orange); }
+.suv .btn { color: var(--dark-cyan); }
+.luxury .btn { color: var(--very-dark-cyan); }
+
+/* Hover States */
+.btn:hover {
+  background-color: transparent;
+  color: var(--very-light-gray) !important;
+}
+
+.attribution {
+  margin-top: 20px;
+  font-size: 11px;
+  text-align: center;
+}
