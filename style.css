@@ -31,7 +31,7 @@ body {
   flex-direction: column;
   max-width: 920px;
   border-radius: 8px;
-  overflow: hidden; /* Memastikan sudut kartu tetap melengkung */
+  overflow: hidden;
 }
 
 /* Desktop Layout */
@@ -65,7 +65,7 @@ body {
   color: var(--transparent-white);
   line-height: 1.6;
   margin-bottom: 80px;
-  flex-grow: 1; /* Menjaga tombol tetap sejajar di bawah jika teks berbeda panjangnya */
+  flex-grow: 1;
 }
 
 /* --- Interactive Elements --- */
